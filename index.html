@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>The Wedding of Alfia & Fadil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        backgroundPosition: {
+          top: 'top',
+          center: 'center',
+          'top-4': 'center top -15rem',
+        },
+        fontFamily: {
+          sans: ['Gilda Display', 'sans-serif'],
+          display: ['Gilda Display', 'sans-serif'],
+          body: ['Gilda Display', 'sans-serif']
+        },
+        extend: {
+          colors: {
+            'cream': '#d5bdaf',
+          },
+        }
+      },
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      :root {
+        --pink: #f14e95;
+        --bg: #0a0a0a;
+        --shadow: 0 2px 2px rgb(0,0,0 / 0.5)
+      }
+      body {
+        min-height: 2000px;
+      }
+      .hero::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url('img/hero-background.jpg');
+        z-index: -1;
+        filter: brightness(60%);
+      }
+      .hero {
+        position: relative;
+        min-height: 100vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section id="hero" class="hero w-screen h-screen p-3 mx-auto text-center flex justify-center items-center text-white before:bg-center before:bg-cover before:bg-no-repeat before:md:bg-top-4">
+    <div class="absolute top-12">
+      <p class="text-lg">The Wedding of</p>
+      <p class="text-4xl md:text-6xl">Alfia & Fadil</p>
+      <p class="text-base">Saturday, June 8th 2024</p>
+    </div>
+    <div class="absolute bottom-40">
+      <p class="text-base">Dear</p>
+      <p class="text-lg font-semibold">Nama tamu</p>
+      <a href="#undangan">
+        <button class="rounded-3xl mt-5 px-4 py-2 text-white bg-cream" type="button">Buka Undangan</button>
+      </a>
+    </div>
+  </section>
+</body>
+</html>
