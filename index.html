@@ -22,8 +22,8 @@
       <p class="text-base">Saturday, June 8th 2024</p>
     </div>
     <div class="absolute bottom-40">
-      <p class="text-base">Dear</p>
-      <p class="text-lg font-semibold">Nama tamu</p>
+      <p class="font-serif text-base">Kepada</p>
+      <p class="nama-tamu text-lg font-bold">Bapak/Ibu/Saudara/i</p>
       <a href="#undangan">
         <button class="rounded-3xl mt-5 px-4 py-2 text-white bg-brown" type="button">Buka Undangan</button>
       </a>
@@ -54,7 +54,7 @@
   <section id="countdown">
     <div class="flex flex-col justify-center items-centerb text-center p-4 my-12 mx-6 bg-brown rounded-2xl">
       <p class="font-serif text-2xl text-white">Waktu menuju acara</p>
-      <div class="simply-countdown font-serif font-semibold text-white border-2 border-white rounded-xl mt-4"></div>
+      <div class="simply-countdown font-serif font-semibold text-white border-2 border-white rounded-xl mt-4 px-8 py-2"></div>
       <p class="font-serif text-sm text-white mt-6">
         Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, insyaAllah kami akan menyelenggarakan
         acara :
@@ -96,6 +96,13 @@
           seconds: { singular: 'Detik', plural: 'Detik' }
       },
     });
+  </script>
+  <script>
+    const params = new URLSearchParams(document.location.search);
+    var tamu = params.get('tamu');
+    if (tamu) {
+      document.getElementsByClassName("nama-tamu")[0].innerHTML = `<center><b>${tamu}</b></center>`;
+    }
   </script>
 </body>
 </html>
