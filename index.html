@@ -6,54 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="countdown.css"/>
+  <script src="js/simplyCountdown.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        backgroundPosition: {
-          top: 'top',
-          center: 'center',
-          'top-4': 'center top -15rem',
-        },
-        fontFamily: {
-          sans: ['Gilda Display', 'sans-serif'],
-          display: ['Gilda Display', 'sans-serif'],
-          body: ['Gilda Display', 'sans-serif']
-        },
-        extend: {
-          colors: {
-            'cream': '#d5bdaf',
-          },
-        }
-      },
-    }
-  </script>
-  <style type="text/tailwindcss">
-    @layer utilities {
-      :root {
-        --pink: #f14e95;
-        --bg: #0a0a0a;
-        --shadow: 0 2px 2px rgb(0,0,0 / 0.5)
-      }
-      body {
-        min-height: 2000px;
-      }
-      .hero::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-image: url('img/hero-background.jpg');
-        z-index: -1;
-        filter: brightness(60%);
-      }
-      .hero {
-        position: relative;
-        min-height: 100vh;
-      }
-    }
-  </style>
+  <script src="tailwind.config.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <section id="hero" class="hero w-screen h-screen p-3 mx-auto text-center flex justify-center items-center text-white before:bg-center before:bg-cover before:bg-no-repeat before:md:bg-top-4">
@@ -66,9 +25,77 @@
       <p class="text-base">Dear</p>
       <p class="text-lg font-semibold">Nama tamu</p>
       <a href="#undangan">
-        <button class="rounded-3xl mt-5 px-4 py-2 text-white bg-cream" type="button">Buka Undangan</button>
+        <button class="rounded-3xl mt-5 px-4 py-2 text-white bg-brown" type="button">Buka Undangan</button>
       </a>
     </div>
   </section>
+  <section id="undangan" class="w-screen pt-8 mx-auto text-center flex flex-col justify-start items-center">
+    <div class="flex flex-col p-3 mx-auto items-center text-center gap-3">
+      <img id="bismillah" src="icons/bismillah.svg" class="max-w-sm"/>
+      <p class="text-xl text-slate-950">Assalamu'alaikum Wr. Wb.</p>
+      <p class="font-serif text-sm text-slate-700 mt-4">Tanpa mengurangi rasa hormat. Kami mengundang Bapak/Ibu/Saudara/i serta kerabat sekalian untuk menghadiri acara pernikahan kami:</p>
+    </div>
+    <div class="flex flex-col justify-center items-center my-6">
+      <img id="pengatin-wanita" src="img/alfia.JPG" class="w-56 h-56 border-4 border-white rounded-full shadow-xl mx-6" />
+      <p class="text-2xl text-brown font-semibold mt-4">Alfia Fatmawati</p>
+      <p class="font-serif text-xs text-slate-950 mt-6">Putri dari</p>
+      <p class="text-lg font-serif text-slate-950">Bapak Sadikun</p>
+      <p class="text-lg font-serif text-slate-950">Ibu Nur Muzaeni</p>
+    </div>
+    <p class="text-4xl text-slate-950">&</p>
+    <div class="flex flex-col justify-center items-center my-6">
+      <img id="pengatin-pria" src="img/fadil.JPG" class="w-56 h-56 border-4 border-white rounded-full shadow-xl mx-6" />
+      <p class="text-2xl text-brown font-semibold mt-4">Ahmad Fadilah Dwiputra</p>
+      <p class="font-serif text-xs text-slate-950 mt-6">Putra dari</p>
+      <p class="text-lg font-serif text-slate-950">Bapak Subur Dwiyanto</p>
+      <p class="text-lg font-serif text-slate-950">Ibu Nurohmah</p>
+    </div>
+  </section>
+  <section id="countdown">
+    <div class="flex flex-col justify-center items-centerb text-center p-4 my-12 mx-6 bg-brown rounded-2xl">
+      <p class="font-serif text-2xl text-white">Waktu menuju acara</p>
+      <div class="simply-countdown font-serif font-semibold text-white border-2 border-white rounded-xl mt-4"></div>
+      <p class="font-serif text-sm text-white mt-6">
+        Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, insyaAllah kami akan menyelenggarakan
+        acara :
+      </p>
+      <p class="text-3xl font-semibold text-white mt-6">Akad</p>
+      <p class="text-sm font-serif text-white mt-1">Pukul 08.00 WIB - Selesai</p>
+      <p class="text-3xl font-semibold text-white mt-6">Resepsi</p>
+      <p class="text-sm font-serif text-white mt-1">Pukul 10.00 WIB - Selesai</p>
+      <a href="https://maps.app.goo.gl/wBVZNvQvD3i4Z89j7" target="_blank" class="flex gap-2 items-center rounded-3xl mt-10 mx-auto px-4 py-2 text-white text-sm border-white border" >
+        <img src="icons/map.svg"/>
+        Lihat Google Maps
+      </a>
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The%20Wedding%20of%Alfia%20and%20Fadil&details=The%20Wedding%20of%20Alfia%20and%20Fadil%20%7C%2008%20Juni%202024%20%7C%20RT%2001%20RW%2001,%20Desa%20Bakung,%20Kec.%20Mijen,%20Kab.%20Demak,%20Jawa%20Tengah%2059583%20%7C%2008.00%20-%2012.00%20WIB&dates=20240608T080000/20240608T120000&location=https://maps.app.goo.gl/wBVZNvQvD3i4Z89j7" target="_blank" class="flex gap-2 items-center rounded-3xl my-4 mx-auto px-4 py-2 text-white text-sm border-white border" >
+        <img src="icons/calendar.svg"/>
+        Simpan Tanggal
+      </a>
+    </div>
+  </section>
+  <div class="h-px border-white border rounded-2xl mx-4 my-8"></div>
+  <section id="ayat">
+    <div class="flex flex-col p-3 mx-auto text-center">
+      <img id="pengatin" src="img/pengatin.jpg" class="border-16 border-white rounded-t-full shadow-xl mx-6" />
+      <p class="text-base text-gray-500 mx-6 mt-6 mb-4z">
+				Dan di antara tanda-tanda kekuasaan-Nya lah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.
+      </p>
+      <p class="text-lg font-semibold text-gray-500">- QS. Ar-Rum Ayat 21 -</p>
+    </div>
+  </section>
+  <script>
+    simplyCountdown('.simply-countdown', {
+      year: 2024, // required
+      month: 8, // required
+      day: 6, // required
+      hours: 8, // Default is 0 [0-23] integer
+      words: { //words displayed into the countdown
+          days: { singular: 'Hari', plural: 'Hari' },
+          hours: { singular: 'Jam', plural: 'Jam' },
+          minutes: { singular: 'Menit', plural: 'Menit' },
+          seconds: { singular: 'Detik', plural: 'Detik' }
+      },
+    });
+  </script>
 </body>
 </html>
