@@ -25,7 +25,7 @@
       <p class="font-serif text-base">Kepada</p>
       <p class="nama-tamu text-lg font-bold">Bapak/Ibu/Saudara/i</p>
       <a href="#undangan">
-        <button class="rounded-3xl mt-5 px-4 py-2 text-white bg-brown" type="button">Buka Undangan</button>
+        <button class="rounded-3xl mt-5 px-4 py-2 text-white bg-brown" type="button" onclick="enableScroll()">Buka Undangan</button>
       </a>
     </div>
   </section>
@@ -96,6 +96,21 @@
           seconds: { singular: 'Detik', plural: 'Detik' }
       },
     });
+    function disableScroll() {
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+      window.onscroll = function () {
+        window.scrollTo(scrollTop, scrollLeft);
+      }
+
+      rootElement.style.scrollBehavior = 'auto';
+    }
+    function enableScroll() {
+      window.onscroll = function () { }
+      rootElement.style.scrollBehavior = 'smooth';
+    }
+    disableScroll();
   </script>
   <script>
     const params = new URLSearchParams(document.location.search);
